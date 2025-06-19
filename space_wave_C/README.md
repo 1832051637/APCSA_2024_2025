@@ -17,5 +17,5 @@ In this fast-paced space shooter, the player rides a wave through space while do
 ---
 
 © 2024-2025 Team C. All rights reserved.
-This project was created as part of the AP Computer Science A 2024-2025 school year, AP Division Shenghua Zizhu Academy.![alt text](image.png)
+This project was created as part of the AP Computer Science A 2024-2025 school year, AP Division Shenghua Zizhu Academy.
 
