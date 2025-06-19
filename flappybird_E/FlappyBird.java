@@ -37,7 +37,8 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
     private int pipeSpawnCounter;
     private int nextSpawnDelay;
     private Clip backgroundClip;
-    private boolean showCover = true; // 新增：封面显示状态
+    private Clip crashClip;
+    private boolean showCover = true;
     private BufferedImage backgroundImage;
     private String backgroundPath = "Resource/images/background.png";
     private BufferedImage playerImage;
@@ -53,6 +54,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         loadBackground();
         loadPlayer();
         loadbgm("Resource/sounds/bgm.wav");
+        loadCrashSound("Resource/sounds/man.wav"); 
         planeY = HEIGHT / 2;
         planeVelocity = 0;
         pipes = new ArrayList<>();
@@ -72,6 +74,18 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
             e.printStackTrace();
         }
     }
+    
+    public void loadCrashSound(String filename) {
+        try {
+            File audioFile = new File(filename);
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+            crashClip = AudioSystem.getClip();
+            crashClip.open(audioStream);
+        } catch (Exception e) {
+            System.out.println("Crash sound not working");
+        }
+    }
+
 
     public void loadPlayer() {
         try{
@@ -104,6 +118,13 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         }
     }
 
+    private void playCrashSound() {
+        if (crashClip != null) {
+            crashClip.setFramePosition(0); // 重置音效到开始位置
+            crashClip.start(); // 播放音效
+        }
+    }
+
     private void checkCollisions() {
         Rectangle planeRect = new Rectangle(WIDTH / 2, planeY+PLANE_HEIGHT/2, PLANE_WIDTH/2, PLANE_HEIGHT/2);
         for (Rectangle pipe : pipes) {
@@ -111,6 +132,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
                 gameOver = true;
                 timer.stop();
                 stopbgm();
+                playCrashSound();
                 break;
             }
         }
@@ -118,6 +140,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
             gameOver = true;
             timer.stop();
             stopbgm();
+            playCrashSound();
         }
     }
 
@@ -133,7 +156,11 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         gameStarted =  true;
         timer.start();
         loopbgm();
-        showCover = false; // 重置时不显示封面
+        showCover = false;
+        if (crashClip != null) {
+            crashClip.stop();
+            crashClip.setFramePosition(0);
+    }
     }
     
 
@@ -156,7 +183,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         g.drawImage(playerImage, WIDTH/2 - PLANE_WIDTH/2, planeY, null);
 
         //绘制hitbox
-        //g.drawRect(WIDTH / 2, planeY+PLANE_HEIGHT/2, PLANE_WIDTH/2, PLANE_HEIGHT/2);
+        // g.drawRect(WIDTH / 2, planeY+PLANE_HEIGHT/2, PLANE_WIDTH/2, PLANE_HEIGHT/2);
 
         // Draw pipes
         g.setColor(Color.GRAY);
@@ -180,8 +207,6 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
             g.drawString("Press SPACE to Restart", WIDTH / 2 - 220, HEIGHT / 2 + 60);
         }
     }
-
-    // 新增：绘制游戏封面
     private void drawCover(Graphics g) {
         // 封面背景
         // g.setColor(new Color(135, 206, 235)); // 天空蓝
