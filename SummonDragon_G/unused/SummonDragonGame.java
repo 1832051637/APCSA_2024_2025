@@ -1,6 +1,7 @@
+package unused;
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.*;
-import java.io.IOException;
 
 // 游戏实体基类
 abstract class Entity {

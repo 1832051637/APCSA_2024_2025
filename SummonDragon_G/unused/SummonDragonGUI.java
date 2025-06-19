@@ -1,8 +1,9 @@
-import javax.swing.*;
+package unused;
 import java.awt.*;
 import java.awt.event.*;
 import java.net.URL;
 import java.util.Arrays;
+import javax.swing.*;
 
 public class SummonDragonGUI {
     private static final String[] LEVELS = { "螃蟹", "乌龟", "鹤", "鱼", "蛙", "蛇", "神龙" };

@@ -1,25 +1,22 @@
+package unused;
 
 // 这是一个简单的Java Swing游戏，模拟了一个神秘池塘的生态系统。
 // 游戏中有不同等级的生物，玩家可以通过移动和合并生物来升级。
 // 游戏的目标是召唤神龙，玩家需要在池塘中生存并与其他生物互动。
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.swing.*;
-import java.awt.geom.AffineTransform;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
+import java.awt.image.BufferedImage;
+import java.net.URL;
 import java.util.*;
 import java.util.List;
-import javax.swing.Timer;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.awt.image.BufferedImage;
-import java.net.URL;
+import javax.swing.*;
 
 public class DragonPondGame extends JPanel implements Runnable {
     // 游戏配置
