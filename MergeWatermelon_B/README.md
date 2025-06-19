@@ -17,5 +17,5 @@ Inspired by the popular "Big Watermelon" game, this project simulates fruit merg
 ---
 
 © 2024-2025 Team B. All rights reserved.
-This project was created as part of the AP Computer Science A course, 2025 Spring at AP Division Shenghua Zizhu Academy.
+This project was created as part of the AP Computer Science A 2024-2025 school year, AP Division Shenghua Zizhu Academy.
 

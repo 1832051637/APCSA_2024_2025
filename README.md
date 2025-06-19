@@ -1,6 +1,6 @@
 # 2024 - 2025 AP Computer Science A Projects
 
-This repository contains the AP CS A final projects for the 2024-2025 semester.
+This repository contains the AP CS A final projects for the 2024-2025 school year.
 
 ## Project Teams
 
