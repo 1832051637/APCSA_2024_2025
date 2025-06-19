@@ -1,8 +1,9 @@
 # 📌 Merge Watermelon
 
 ## 🧑‍🤝‍🧑 Team B
-- 马斌（Eric Ma）
-- 王司丞（Allen Wang）
+- 方文岐（Sam Fang）
+- 项子轩（Lucas Xiang）
+
 
 
 
