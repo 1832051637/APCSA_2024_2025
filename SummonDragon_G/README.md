@@ -22,5 +22,5 @@ java .\src\DragonPondGame.java
 ---
 
 © 2024-2025 Team G. All rights reserved.
-This project was created as part of the AP Computer Science A 2024-2025 school year, AP Division Shenghua Zizhu Academy.
+This project was created as part of the AP Computer Science A class 2024-2025, AP Division, Shenghua Zizhu Academy.
 

@@ -18,5 +18,5 @@ Crazy version of the brick bounce game. The player must press keys 1–5 to swit
 ---
 
 © 2024-2025 Team A. All rights reserved.
-This project was created as part of the AP Computer Science A 2024-2025 school year, AP Division Shenghua Zizhu Academy.
+This project was created as part of the AP Computer Science A class 2024-2025, AP Division, Shenghua Zizhu Academy.
 
